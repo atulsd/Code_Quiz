@@ -24,3 +24,13 @@ var qandA = {
     answer4: "4c"
   }
 };
+
+setTime();
+displayQuestion();
+checkAnswer();
+subtractTimer();
+generateScore();
+addTotalscore();
+gameOver();
+addInitials();
+viewHighscores();
