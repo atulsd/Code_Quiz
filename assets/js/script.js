@@ -1,3 +1,4 @@
+var startQuiz = document.querySelector("#startQuiz");
 var displayQuestion;
 var checkAnswer;
 var displayAnswer;
@@ -35,14 +36,20 @@ var qandA = {
   }
 };
 
-setTime();
-displayQuestion();
-checkAnswer();
-displayAnswer();
-subtractTimer();
-generateScore();
-addTotalscore();
-gameOver();
-addInitials();
-viewHighscores();
-viewInitials();
+// setTime();
+// displayQuestion();
+// checkAnswer();
+// displayAnswer();
+// subtractTimer();
+// generateScore();
+// addTotalscore();
+// gameOver();
+// addInitials();
+// viewHighscores();
+// viewInitials();
+
+startQuiz.addEventListener("click", function(event) {
+  event.preventDefault();
+  location.href = "questions.html";
+  //   alert("inside start quiz function");
+});
