@@ -1,5 +1,15 @@
-// var questions = ["a", "b", "c"];
-// var answersA = ["1a", "2a", "3a", "4a"];
+var displayQuestion;
+var checkAnswer;
+var displayAnswer;
+var generateScore;
+var subtractTimer;
+var setTime;
+var timeRemaining;
+var gameOver;
+var addTotalscore;
+var viewHighscores;
+var addInitials;
+var viewInitials;
 
 var qandA = {
   first: {
@@ -28,9 +38,11 @@ var qandA = {
 setTime();
 displayQuestion();
 checkAnswer();
+displayAnswer();
 subtractTimer();
 generateScore();
 addTotalscore();
 gameOver();
 addInitials();
 viewHighscores();
+viewInitials();
