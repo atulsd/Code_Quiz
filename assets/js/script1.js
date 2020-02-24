@@ -18,17 +18,14 @@ function addAnswers() {
   answer.innerHTML = "";
   stored = localStorage.getItem("startQuizcount");
   if (stored === "0") {
-    alert("I am zero mate");
     question.textContent = questions[parseInt(stored)];
     answers = answersQone;
     localStorage.setItem("startQuizcount", "1");
   } else if (stored === "1") {
-    alert("I am one mate");
     question.textContent = questions[parseInt(stored)];
     answers = answersQtwo;
     localStorage.setItem("startQuizcount", "2");
   } else if (stored === "2") {
-    alert("I am two mate");
     question.textContent = questions[parseInt(stored)];
     answers = answersQthree;
     localStorage.setItem("startQuizcount", "3");
