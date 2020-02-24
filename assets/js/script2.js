@@ -7,8 +7,6 @@ result.textContent = resultIs;
 
 var resultTime = setInterval(function() {
   result.textContent = "";
-}, 1000);
-
-//result();
+}, 2000);
 
 highScore.textContent = score;
