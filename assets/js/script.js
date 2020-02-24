@@ -1,6 +1,6 @@
 var startQuiz = document.querySelector("#startQuiz");
 var displayQuestion;
-var checkAnswer;
+//var checkAnswer = document.querySelector("#data-answer");
 var displayAnswer;
 var generateScore;
 var subtractTimer;
@@ -11,6 +11,8 @@ var addTotalscore;
 var viewHighscores;
 var addInitials;
 var viewInitials;
+
+var startQuizcount = 0;
 
 var qandA = {
   first: {
@@ -48,8 +50,14 @@ var qandA = {
 // viewHighscores();
 // viewInitials();
 
+localStorage.setItem("startQuizcount", startQuizcount);
+//startQuizcount = localStorage.getItem("startQuizcount");
+//alert("From local storage." + startQuizcount);
+//if (startQuizcount === "1") {
+//  alert("Start quiz count is:" + startQuizcount);
 startQuiz.addEventListener("click", function(event) {
   event.preventDefault();
+  //  localStorage.setItem("startQuizcount", startQuizcount);
   location.href = "questions.html";
-  //   alert("inside start quiz function");
+  alert("Start quiz count is:" + startQuizcount);
 });
