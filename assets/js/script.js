@@ -30,5 +30,4 @@ localStorage.setItem("startQuizcount", startQuizcount);
 startQuiz.addEventListener("click", function(event) {
   event.preventDefault();
   location.href = "questions.html";
-  alert("Start quiz count is:" + startQuizcount);
 });
