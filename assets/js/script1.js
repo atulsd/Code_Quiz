@@ -8,6 +8,7 @@ var answersQthree = ["3a", "3b", "3c", "3d"];
 var correctAnswers = ["1a", "2b", "3c"];
 
 var answers;
+var stored;
 
 if (localStorage.getItem("startQuizcount") === "0") {
   addAnswers();
@@ -15,20 +16,20 @@ if (localStorage.getItem("startQuizcount") === "0") {
 
 function addAnswers() {
   answer.innerHTML = "";
-
-  if (localStorage.getItem("startQuizcount") === "0") {
+  stored = localStorage.getItem("startQuizcount");
+  if (stored === "0") {
     alert("I am zero mate");
-    question.textContent = questions[0];
+    question.textContent = questions[parseInt(stored)];
     answers = answersQone;
     localStorage.setItem("startQuizcount", "1");
-  } else if (localStorage.getItem("startQuizcount") === "1") {
+  } else if (stored === "1") {
     alert("I am one mate");
-    question.textContent = questions[1];
+    question.textContent = questions[parseInt(stored)];
     answers = answersQtwo;
     localStorage.setItem("startQuizcount", "2");
-  } else if (localStorage.getItem("startQuizcount") === "2") {
+  } else if (stored === "2") {
     alert("I am two mate");
-    question.textContent = questions[2];
+    question.textContent = questions[parseInt(stored)];
     answers = answersQthree;
     localStorage.setItem("startQuizcount", "3");
   }
