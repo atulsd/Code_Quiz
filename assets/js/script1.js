@@ -50,14 +50,14 @@ answer.addEventListener("click", function(event) {
   var element = event.target;
   var index = element.getAttribute("data-index");
   if (answers[index] === correctAnswers[index]) {
-    result.textContent = "Correct" + answers[index];
+    result.textContent = "Correct answer" + answers[index];
     var resultTime = setInterval(function() {
       result.textContent = "";
     }, 3000);
     localStorage.setItem("finalResult", "Correct");
     score += 10;
   } else {
-    result.textContent = "Incorrect Answer" + answers[index];
+    result.textContent = "Incorrect answer" + answers[index];
     var resultTime = setInterval(function() {
       result.textContent = "";
     }, 3000);
