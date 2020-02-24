@@ -1,97 +1,56 @@
-var checkAnswer1 = document.querySelector("#answer1");
-var checkAnswer2 = document.querySelector("#answer2");
-var checkAnswer3 = document.querySelector("#answer3");
-var checkAnswer4 = document.querySelector("#answer4");
+var answer = document.querySelector("#answer");
+var question = document.querySelector("#question");
 
-var qandA = {
-  first: {
-    question: "a",
-    answer1: "1a",
-    answer2: "2a",
-    answer3: "3a",
-    answer4: "4a",
-    correct: "1a"
-  },
-  second: {
-    question: "b",
-    answer1: "1b",
-    answer2: "2b",
-    answer3: "3b",
-    answer4: "4b",
-    correct: "2b"
-  },
-  third: {
-    question: "c",
-    answer1: "1c",
-    answer2: "2c",
-    answer3: "3c",
-    answer4: "4c",
-    correct: "3c"
-  }
-};
+var questions = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
+var answersQone = ["1a", "1b", "1c", "1d"];
+var answersQtwo = ["2a", "2b", "2c", "2d"];
+var answersQthree = ["3a", "3b", "3c", "3d"];
+var correctAnswers = ["1a", "2b", "3c"];
+
+var answers;
 
 if (localStorage.getItem("startQuizcount") === "0") {
-  alert("locat storage is:" + localStorage.getItem("startQuizcount"));
-  //   for (var i = 0; i < 4; i++) {
-  //     if (i === 0) {
-  answer1.textContent = qandA.first.answer1;
-  //     }
-  //     if (i === 1) {
-  answer2.textContent = qandA.first.answer2;
-  //     }
-  //     if (i === 2) {
-  answer3.textContent = qandA.first.answer3;
-  //     }
-  //     if (i === 3) {
-  answer4.textContent = qandA.first.answer4;
-  //     }
-  //   }
-  localStorage.setItem("startQuizcount", "1");
-} else if (localStorage.getItem("startQuizcount") === "1") {
-  alert("locat storage is:" + localStorage.getItem("startQuizcount"));
-  //   for (var i = 0; i < 4; i++) {
-  //     if (i === 0) {
-  answer1.textContent = qandA.second.answer1;
-  //     }
-  //     if (i === 1) {
-  answer2.textContent = qandA.second.answer2;
-  //     }
-  //     if (i === 2) {
-  answer3.textContent = qandA.second.answer3;
-  //     }
-  //     if (i === 3) {
-  answer4.textContent = qandA.second.answer4;
-  //     }
-  //   }
+  addAnswers();
 }
-checkAnswer1.addEventListener("click", function(event) {
-  event.preventDefault();
-  alert("Answer clicked is:" + qandA.first.answer1);
-  alert(event.target);
-  if (localStorage.getItem("startQuizcount") === "1") {
-    alert("locat storage is:" + localStorage.getItem("startQuizcount"));
-    //   for (var i = 0; i < 4; i++) {
-    //     if (i === 0) {
-    answer1.textContent = qandA.second.answer1;
-    //     }
-    //     if (i === 1) {
-    answer2.textContent = qandA.second.answer2;
-    //     }
-    //     if (i === 2) {
-    answer3.textContent = qandA.second.answer3;
-    //     }
-    //     if (i === 3) {
-    answer4.textContent = qandA.second.answer4;
-    //     }
-    //   }
+
+function addAnswers() {
+  answer.innerHTML = "";
+
+  if (localStorage.getItem("startQuizcount") === "0") {
+    alert("I am zero mate");
+    question.textContent = questions[0];
+    answers = answersQone;
+    localStorage.setItem("startQuizcount", "1");
+  } else if (localStorage.getItem("startQuizcount") === "1") {
+    alert("I am one mate");
+    question.textContent = questions[1];
+    answers = answersQtwo;
+    localStorage.setItem("startQuizcount", "2");
+  } else if (localStorage.getItem("startQuizcount") === "2") {
+    alert("I am two mate");
+    question.textContent = questions[2];
+    answers = answersQthree;
+    localStorage.setItem("startQuizcount", "3");
   }
-});
-checkAnswer2.addEventListener("click", function(event) {
-  alert("Answer clicked is:" + qandA.first.answer2);
-});
-checkAnswer3.addEventListener("click", function(event) {
-  alert("Answer clicked is:" + qandA.first.answer3);
-});
-checkAnswer4.addEventListener("click", function(event) {
-  alert("Answer clicked is:" + qandA.first.answer4);
+  var numbering = 0;
+
+  for (var i = 0; i < answers.length; i++) {
+    var answersAre = answers[i];
+
+    var li = document.createElement("li");
+    li.textContent = ++numbering + ". " + answersAre;
+    li.setAttribute("data-index", i);
+    answer.appendChild(li);
+  }
+}
+
+answer.addEventListener("click", function(event) {
+  var element = event.target;
+  var index = element.getAttribute("data-index");
+  if (answers[index] === correctAnswers[index]) {
+    result.textContent = "Correct" + answers[index];
+  } else {
+    result.textContent = "Incorrect Answer" + answers[index];
+  }
+  addAnswers();
 });
