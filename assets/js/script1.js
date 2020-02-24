@@ -9,6 +9,7 @@ var correctAnswers = ["1a", "2b", "3c"];
 
 var answers;
 var stored;
+var score = 0;
 
 if (localStorage.getItem("startQuizcount") === "0") {
   addAnswers();
@@ -29,6 +30,9 @@ function addAnswers() {
     question.textContent = questions[parseInt(stored)];
     answers = answersQthree;
     localStorage.setItem("startQuizcount", "3");
+  } else {
+    localStorage.setItem("score", score);
+    location.href = "highscores.html";
   }
   var numbering = 0;
 
@@ -47,8 +51,11 @@ answer.addEventListener("click", function(event) {
   var index = element.getAttribute("data-index");
   if (answers[index] === correctAnswers[index]) {
     result.textContent = "Correct" + answers[index];
+    localStorage.setItem("finalResult", "Correct");
+    score += 10;
   } else {
     result.textContent = "Incorrect Answer" + answers[index];
+    localStorage.setItem("finalResult", "Incorrect");
   }
   addAnswers();
 });
