@@ -82,7 +82,14 @@ answer.addEventListener("click", function(event) {
     var resultTime = setInterval(function() {
       result.textContent = "";
     }, 3000);
+    penalty();
     localStorage.setItem("finalResult", "Incorrect");
   }
   addAnswers();
 });
+
+function penalty() {
+  timeStart -= 15;
+  timer.textContent = timeStart;
+  // timeStart--;
+}
