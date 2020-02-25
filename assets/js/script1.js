@@ -1,6 +1,8 @@
 var answer = document.querySelector("#answer");
 var question = document.querySelector("#question");
+var timeStart = localStorage.getItem("time");
 
+var timer = document.querySelector("#timer");
 var questions = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
 var answersQone = ["1a", "1b", "1c", "1d"];
 var answersQtwo = ["2a", "2b", "2c", "2d"];
@@ -11,8 +13,27 @@ var answers;
 var stored;
 var score = 0;
 
+timer.textContent = timeStart;
 if (localStorage.getItem("startQuizcount") === "0") {
   addAnswers();
+  startTimer();
+}
+
+function startTimer() {
+  //setTime();
+  interval = setInterval(function() {
+    //secondsElapsed++;
+    //So renderTime() is called here once every second.
+    renderTime();
+  }, 1000);
+}
+
+function renderTime() {
+  timeStart--;
+  if (timeStart === 0) {
+    location.href = "highscores.html";
+  }
+  timer.textContent = timeStart;
 }
 
 function addAnswers() {
