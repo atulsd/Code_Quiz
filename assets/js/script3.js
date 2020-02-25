@@ -1,10 +1,10 @@
-var resultIs = localStorage.getItem("score");
+var score = localStorage.getItem("score");
 var initials = localStorage.getItem("initials");
 
 var list = document.querySelector("#list");
 
 var initialsAndscore = document.createElement("li");
-initialsAndscore.innerText = initials + " " + resultIs;
+initialsAndscore.innerText = initials + " " + score;
 
 list.appendChild(initialsAndscore);
 
