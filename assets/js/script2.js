@@ -14,5 +14,6 @@ highScore.textContent = score;
 
 submitInfo.addEventListener("click", function(event) {
   event.preventDefault();
+  localStorage.setItem("initials", initials.value);
   location.href = "highScorelist.html";
 });
