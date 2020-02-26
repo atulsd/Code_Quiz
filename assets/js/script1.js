@@ -3,12 +3,13 @@ var question = document.querySelector("#question");
 var timeStart = localStorage.getItem("time");
 
 var timer = document.querySelector("#timer");
+
 var questions = [
   "What does Nan means?",
-  "What will the code below output? console.log(0.1 + 0.2) console.log(0.1 + 0.2 == 0.3);",
-  "In what order will the numbers 1-4 be logged to the console when the code below is executed? Why?(function() {console.log(1); setTimeout(function(){console.log(2)}, 1000); setTimeout(function(){console.log(3)}, 0); console.log(4);})();",
-  "Consider the following code snippet:for (var i = 0; i < 5; i++) {var btn = document.createElement('button');btn.appendChild(document.createTextNode('Button ' + i));btn.addEventListener('click', function(){ console.log(i); });document.body.appendChild(btn);}(a) What gets logged to the console when the user clicks on “Button 4” and why?",
-  "What will the code below output to the console and why?var arr1 = 'john'.split('');var arr2 = arr1.reverse();var arr3 = 'jones'.split('');arr2.push(arr3);console.log('array 1: length=' + arr1.length + ' last=' + arr1.slice(-1));console.log('array 2: length=' + arr2.length + ' last=' + arr2.slice(-1));"
+  "What will the code output?____console.log(0.1 + 0.2)____ console.log(0.1 + 0.2 == 0.3);",
+  "In what order will the numbers 1-4 be logged to the console when the following code is executed?___ (function() {___console.log(1);___ setTimeout(function(){console.log(2)}, 1000);___ setTimeout(function(){console.log(3)}, 0);___ console.log(4);})",
+  "Consider the following code snippet:___for (var i = 0; i < 5; i++)___ {var btn = document.createElement('button');___btn.appendChild(document.createTextNode('Button ' + i));___btn.addEventListener('click', function(){ console.log(i); });___document.body.appendChild(btn);}___(a) What gets logged to the console when the user clicks on “Button 4” and why?",
+  "What will the following code output to the console and why?___var arr1 = 'john'.split('');___var arr2 = arr1.reverse();___var arr3 = 'jones'.split('');___arr2.push(arr3);___console.log('array 1: length=' + arr1.length + ' last=' + arr1.slice(-1));___console.log('array 2: length=' + arr2.length + ' last=' + arr2.slice(-1));"
 ];
 var answersQone = [
   "Not a number",
@@ -49,10 +50,7 @@ if (localStorage.getItem("startQuizcount") === "0") {
 }
 
 function startTimer() {
-  //setTime();
   interval = setInterval(function() {
-    //secondsElapsed++;
-    //So renderTime() is called here once every second.
     renderTime();
   }, 1000);
 }
@@ -133,5 +131,4 @@ answer.addEventListener("click", function(event) {
 function penalty() {
   timeStart -= 15;
   timer.textContent = timeStart;
-  // timeStart--;
 }
