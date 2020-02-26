@@ -59,7 +59,7 @@ function startTimer() {
 
 function renderTime() {
   timeStart--;
-  if (timeStart === 0) {
+  if (timeStart <= 0) {
     location.href = "highscores.html";
   }
   timer.textContent = timeStart;
