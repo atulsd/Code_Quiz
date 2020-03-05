@@ -1,72 +1,3 @@
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #5effc1;
-  font-family: "Concert One", cursive;
-  font-size: 16px;
-}
-
-input {
-  height: 50px;
-  width: 100%;
-  padding: 6px;
-  margin-top: 10px;
-  font-size: 2.4em;
-  border: none;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  background-color: white;
-}
-
-li {
-  height: 50px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding: 5px;
-  background-color: #ff5d88;
-  color: white;
-  font-size: 1.5em;
-  line-height: 1.5;
-}
-
-li:before {
-  content: "\200B";
-  position: absolute;
-}
-
-li::after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-
-li button {
-  float: right;
-  border: none;
-  height: 40px;
-  cursor: pointer;
-  background-color: #ff9500;
-  color: white;
-  font-size: 1em;
-}
-
-li button:hover {
-  background-color: #febc5d;
-}
-
-.todos {
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 40px;
-} */
-
 *,
 *::before,
 *::after {
@@ -219,4 +150,51 @@ li:hover {
 
 #msg.error {
   color: #e6252c;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100%;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* Additional Screen Sizes */
+
+/* Width at 450px and below */
+@media screen and (max-width: 450px) {
+  .card {
+    width: 100%;
+    padding: 20px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100%;
+  }
+}
+
+/* Additional Screen Sizes */
+
+/* Width at 320px and below */
+@media screen and (max-width: 320px) {
+  .card {
+    /* Box-model */
+    width: 100%;
+    padding: 20px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100%;
+  }
+}
+
+/* Width at 168px and below */
+@media screen and (max-width: 168px) {
+  .card {
+    width: 100%;
+    padding: 20px;
+    margin-left: 0px;
+  }
 }
