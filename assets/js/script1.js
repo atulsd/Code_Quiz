@@ -104,7 +104,6 @@ function addAnswers() {
 
 answer.addEventListener("click", function(event) {
   var element = event.target;
-  //Change background color of the answer clicked
   var index = element.getAttribute("data-index");
   var found = 0;
   for (var i = 0; i < correctAnswers.length; i++) {
