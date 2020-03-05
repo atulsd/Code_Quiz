@@ -104,11 +104,12 @@ function addAnswers() {
 
 answer.addEventListener("click", function(event) {
   var element = event.target;
+  //Change background color of the answer clicked
   var index = element.getAttribute("data-index");
   var found = 0;
   for (var i = 0; i < correctAnswers.length; i++) {
     if (answers[index] === correctAnswers[i]) {
-      result.textContent = "Correct answer" + answers[index];
+      result.textContent = "Correct answer";
       var resultTime = setInterval(function() {
         result.textContent = "";
       }, 3000);
@@ -118,12 +119,12 @@ answer.addEventListener("click", function(event) {
     }
   }
   if (found === 0) {
-    result.textContent = "Incorrect answer" + answers[index];
+    result.textContent = "Incorrect answer";
     var resultTime = setInterval(function() {
       result.textContent = "";
     }, 3000);
     penalty();
-    localStorage.setItem("finalResult", "Incorrect");
+    localStorage.setItem("finalResult", "Incorrect answer");
   }
   addAnswers();
 });
