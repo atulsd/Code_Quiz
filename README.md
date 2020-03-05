@@ -22,7 +22,7 @@ This project is about Quiz on JavaScript fundamentals questions. Timer starts as
 
 # StepsTaken:
 
-Prompts has been used for the inputs. Javascript has been used for the validations.
+Timer starts when Start quiz button is pressed. Questions are displayed using arrays. Data is stored in the local storage and then score and initials are displayed in the list.
 
 # Installation:
 
@@ -46,7 +46,7 @@ This project is about Quiz on JavaScript fundamentals questions based on the cri
 
 # References:
 
-sample gif file: (./assets/images/04-web-apis-homework-demo.gif)
+Sample gif file: (./assets/images/04-web-apis-homework-demo.gif)
 
 © 2020 Atul Mahajan. All Rights Reserved.
 
