@@ -14,6 +14,10 @@ highScore.textContent = score;
 
 submitInfo.addEventListener("click", function(event) {
   event.preventDefault();
-  localStorage.setItem("initials", initials.value.trim());
-  location.href = "highScorelist.html";
+  if (initials.value === "") {
+    alert("Initials can not be blank.");
+  } else {
+    localStorage.setItem("initials", initials.value.trim());
+    location.href = "highScorelist.html";
+  }
 });
